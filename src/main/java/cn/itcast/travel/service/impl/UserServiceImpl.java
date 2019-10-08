@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         userDao.save(user);
 
         //发送邮件
-        String mailText = "<a href='https://localhost:8080/travel/activeUserServlet?code="+ user.getCode() +"'>点击这里激活</a>";
+        String mailText = "<a href='https://localhost:8080/travel/user/active?code="+ user.getCode() +"'>点击这里激活</a>";
         MailUtils.sendMail("745182569@qq.com",mailText,"测试激活邮件");
 
         return true;
